@@ -69,33 +69,31 @@
 			?></pre>
 			<?php
 
-			$sizes = array('exif');
+			$file = 'exif.jpg';
 			$container = array('img tag', 'background');
 			$encoding = array('normal', 'data uri');
 
-			foreach ($sizes as $s) {
-				foreach ($container as $c) {
-					$esc_c = htmlspecialchars($c);
-					foreach ($encoding as $e) {
-						echo "<h2>$esc_c / $e</h2>";
-						if ($e == 'normal') {
-							$url = "$s.jpg";
-						} else if ($e == 'data uri') {
-							$url = file_get_contents("$s.jpg");
-							$url = base64_encode($url);
-							$url = "data:image/jpeg;base64,$url";
-						}
-						$short_url = $url;
-						if (strlen($short_url) > 32) {
-							$short_url = substr($short_url, 0, 32) . '...';
-						}
-						if ($c == 'img tag') {
-							echo "<pre>&lt;img src=\"$short_url\"&gt;</pre>";
-							echo "<img src=\"$url\">";
-						} else if ($c == 'background') {
-							echo "<pre>&lt;div style=\"background-image: url('$short_url')\"&gt;&lt;/div&gt;</pre>";
-							echo "<div class=\"background-image\" style=\"background-image: url('$url')\"></div>";
-						}
+			foreach ($container as $c) {
+				$esc_c = htmlspecialchars($c);
+				foreach ($encoding as $e) {
+					echo "<h2>$esc_c / $e</h2>";
+					if ($e == 'normal') {
+						$url = $file;
+					} else if ($e == 'data uri') {
+						$url = file_get_contents($file);
+						$url = base64_encode($url);
+						$url = "data:image/jpeg;base64,$url";
+					}
+					$short_url = $url;
+					if (strlen($short_url) > 32) {
+						$short_url = substr($short_url, 0, 32) . '...';
+					}
+					if ($c == 'img tag') {
+						echo "<pre>&lt;img src=\"$short_url\"&gt;</pre>";
+						echo "<img src=\"$url\">";
+					} else if ($c == 'background') {
+						echo "<pre>&lt;div style=\"background-image: url('$short_url')\"&gt;&lt;/div&gt;</pre>";
+						echo "<div class=\"background-image\" style=\"background-image: url('$url')\"></div>";
 					}
 				}
 			}
