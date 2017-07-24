@@ -59,7 +59,7 @@
 	<body>
 		<div id="container">
 			<h1>EXIF orientation test</h1>
-			<p>This is a test of <a href="https://www.daveperrett.com/articles/2012/07/28/exif-orientation-handling-is-a-ghetto/">EXIF orientation modes</a> to check how browser and OS implementations work. I took the photo horizontally, with the volume buttons facing up (EXIF orientation mode 3). The photo was then resized by iOS Mail.app with the "Medium" setting. No other edits were made to the photo. You can see the <a href="https://github.com/dphiffer/orientation-exif-test">source code</a> on GitHub.</p>
+			<p>This is a test of <a href="https://www.daveperrett.com/articles/2012/07/28/exif-orientation-handling-is-a-ghetto/">EXIF orientation modes</a> to check how browser and OS implementations work. I took the photo horizontally, with the volume buttons facing up (EXIF orientation mode 3). The photo was then resized by iOS Mail.app with the "Medium" setting. No other edits were made to the photo. You can see the <a href="https://github.com/dphiffer/exif-orientation-test">source code</a> on GitHub.</p>
 			<p><a href="#" onclick="document.getElementById('all-tags').style.display = 'block'; this.style.display = 'none'; return false;">Show all EXIF tags</a></p>
 			<pre id="all-tags" style="display: none;"><?php
 
