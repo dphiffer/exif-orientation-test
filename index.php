@@ -103,7 +103,7 @@
 			<ul>
 				<li>On iOS 10.3.2 image tags (but not background images) are rotated to correct for EXIF orientation mode (photo is shown right-side-up, with "1" and "2" on top), in both Mobile Safari and Chrome.</li>
 				<li>No other browser/OS attempts to rotate to correct for EXIF orientation mode (photo is shown upside down, with "4" and "3" on top), for both image tags and background images. Tested macOS 10.12.6 with Firefox 54.0.1, Safari 10.1.2, Chrome 59.0.3071.115 and Chrome on Android 7.0.</li>
-				<li>Image URI vs. data URI has no impact on EXIF orientation rotation.</li>
+				<li>Filename URL vs. data URI has no impact on EXIF orientation rotation.</li>
 			</ul>
 			<p>Please <a href="mailto:dan@phiffer.org">contact me</a> if you discover a different behavior.</p>
 		</div>
